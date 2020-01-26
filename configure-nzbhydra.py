@@ -52,7 +52,10 @@ def main():
         }
     }
 
-    force_mapping = {'main.updateCheckEnabled': False}
+    force_mapping = {
+        'main.updateCheckEnabled': False,
+        'main.showUpdateBannerOnDocker': False
+    }
 
     yml_config = os.path.join(args.data, "nzbdrone.yml")
     if not os.path.exists(yml_config):

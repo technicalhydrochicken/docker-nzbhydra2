@@ -9,13 +9,25 @@ with a few things in mind:
 
 * Configure simple options through environment variables (APIKey, Backups, etc)
 
+* Run a single process, which can easily be health checked and restarted if needed
+
 * Configure more complex options (downloaders, indexers) through ConfigMaps or
-  Secrets
+  Secrets **Coming Soon**
 
 ## Environmental Variables
+
+The following variables can be used to optionally setup configuration options
+in the `nzbhydra.yml` file
 
 | Environment Variable | Config Option |
 |----------------------|---------------|
 |NZBHYDRA_BACKUP_DAYS  |main.backupEveryXDays|
 |NZBHYDRA_APIKEY|main.apiKey|
 |NZBHYDRA_BACKUP_KEEP_WEEKS|main.deleteBackupsAfterWeeks|
+
+The following config options are set to make things more docker-y
+
+| Config Option | Value |
+|---------------|-------|
+|main.updateCheckEnabled| False |
+|main.showUpdateBannerOnDocker| False |
